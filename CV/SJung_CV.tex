@@ -1,0 +1,300 @@
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{enumerate}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{array}
+
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\fboxsep}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+
+\newcommand{\ressubheading}[4]{
+	\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+			\textbf{#1} & #2 \\
+			\textit{#3} & \textit{#4} \\
+	\end{tabular*}\vspace{-6pt}
+}
+
+%\newcommand{\ressubheading}[4]{%
+% \item\textbf{#1} \hfill #2\null\\
+%  #3 \hfill #4%
+%}
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Segun C. Jung, PhD} & \textbf{\today} \\
+Associate Director of R\&D and Clinical Bioinformatics  \\
+Research \& Development & \href{segun.jung@neogenomics.com}{segun.jung@neogenomics.com} \\
+NeoGenomics Laboratories & \href{http://dauss75.github.io/}{http://dauss75.github.io/} \\
+
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{University of Arizona Global Campus}{Arizona, AZ}{MBA,  (GPA: 4.0/4.0)} {2021-expected to graduate in 2022} \\
+\item
+	\ressubheading{New York University}{New York, NY}{PhD, Computational Biology (GPA: 3.8/4.0)} {2013}
+	\begin{itemize}
+		\resitem{Advisor: Dr. Tamar Schlick}
+		\resitem{Thesis: Modeling RNA Junctions with Applications to Structure Predictions of Regulatory Regions of Viral RNAs} \\
+	\end{itemize}
+
+\item
+	\ressubheading{Drexel University}{Philadelphia, PA}{M.Sc. Biomedical Engineering (GPA: 3.82/4.0)}{2007}
+	\begin{itemize}
+		\resitem{Advisors: Dr. Louise C. Showe}
+		\resitem{Thesis: One-Class Machine Learning Approach for MicroRNA Gene Predictions} \\
+	\end{itemize}
+
+\item
+	\ressubheading{Korea University of Technology and Education}{South Korea}{B.E. Information Technology (GPA: 3.86/4.0)}{2003}
+	\begin{itemize}
+		\resitem{Graduated with a Major in Electronics Engineering and a Minor in Computater Engineering}
+		\resitem{Thesis: Real-time Digital Video Recording Using Wavelet Compression Algorithm} \\
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+	{Research \& Development, NeoGenomics Laboratories, Aliso Viejo, CA \cftdotfill{\cftsecdotsep} 2018 -- present}\\
+  \begin{enumerate}[1)]
+    \item
+	  Manage a group of talented bioinformatician with PhD and MS in bioinformatics, computer science, and (computational) biology. \\
+    \item
+    Responsible for building/maintaining a high performance cluster used in operations (clinical lab) (software -- PBS, Torque -- and 20+ compute nodes with over 2000 processors).   
+    \item
+    Responsible for developing/maintaining/operationalizing NGS pipelines for DNA and RNA on the NextSeq and NovaSeq sequencer).   
+    \item
+    Established/operationalized MSI (microsatellite instability) and CNV pipelines.   
+   \end{enumerate}  
+
+\item
+	{Globus Genomics Team, The University of Chicago \& Argonne National Laboratories, Chicago, IL \cftdotfill{\cftsecdotsep} 2016 -- 2018}\\
+  \begin{enumerate}[1)]
+    \item
+	  A core member of Globus Genomics \href{http://www.globusgenomics.org}{www.globusgenomics.org}, a galaxy-based platform in Amazon EC2 linux instance running Ubuntu 16.04, which provides a cloud-based solution for next generation sequencing data. I am responsible for front- and back-end bioinformatic developments and our source code is maintained in git repo.  (programming language: \textbf{shell scripting, XML, python}, and \textbf{R}). \\
+    \item
+    Co-led several projects for building best practice workflows for NGS data analyses via industry and academia collaborations that include Institute for Systems Biology, Colgate-Palmolive, UPenn, Boston Univ., and Fred Hutchinson Research Center. Most recently, we installed and wrapped ($>$100 tools) the Mothur and QIIME suite and built Microbiome workflows for Colgate-Palmolive.   
+   \end{enumerate}  
+\item   
+	{Biomedical Informatics Consultant, The University of Illinois at Chicago, Chicago, IL \cftdotfill{\cftsecdotsep} 2017 -- 2018}\\
+  \begin{enumerate}[1)]
+    \item
+    Performed genomic data analysis to identify candidate genes in diabetic retinopathy, the leading cause of irreversible vision loss, which show a differential response in expression to glucose between diabetic subjects with and without retinopathy in
+EBV-transformed lymphoblastoid cell lines (LCLs). The analysis involved controlling confounding factors, gene set enrichment analysis (GSEA), ingenuity pathway analysis (IPA), utilizing eTQL data from GTEx, and imputing gene expression using SNP data from 2829 diabetic subjects using Predixcan. (programming language:\textbf{R}). \\ 
+    \item
+    Working on a generic screening test project for child blindness that is caused by automosal recessive manner from both parents.  I have been implementing a program that classifies pathogenic rare variants using public data set (gnomAD) based on the American College of Medical Genetics and Genomics (ACMG) and the Association for Molecular Pathology (AMP) guideline. Then, we perform a hardy-weinberg equilibrium test and estimate the number of affected population from allele frequency for each predicted pathogenic variant  (programming language:\textbf{python} and \textbf{R}). \\
+  \end{enumerate}
+
+\item
+	{Postdoctoral Fellow, Davuluri Lab, Northwestern University Feinberg School of Medicine, Chicago, IL \cftdotfill{\cftsecdotsep} 2013 -- 2015}\\
+    - Worked on next generation sequencing (NGS) data analysis that includes RNA-seq, exon-array, miRNA-seq, SNP array, ChIP-seq, and Whole Exom Sequencing (WES) with various statistical and machine learning techniques (programming language: \textbf{R}). \\
+
+    \begin{enumerate}[1)]
+    		\item
+    			Identification of casual generic variants for Prostate Cancer using TCGA RNA-seq and SNP array, and ChIP-seq data (tools - overlapSelect, awk, bedtools, and R packages (DESeq2, foreach and doParallel))
+    	    \item
+    	    		Copy number variation analysis using WES and SNP array for native African prostate cancer patients (tools - bwa, fastQC, samtools, bamtools, picard, and GATK)
+    		\item
+    			MicroRNA-seq data analysis related to wound/healing in mouse (tools - fastQC, featureCounts, htseq-count, trim\_galore(cutadapt wrapper), and R package (DESeq))
+    		\item
+    			Illumina beadAarray data analysis for polycythemia vera patients with and without interferon  treatment (tools - R packages (limma, illuminaio, lumi))
+
+    \end{enumerate}
+
+	\resitem{Graudate Student, Schlick Lab, NYU, New York\cftdotfill{\cftsecdotsep} 2008 -- 2013}	\\
+	- Worked on finding recurrent structural elements in RNA junctions\\
+	- Worked on 3D structure modeling of viral RNAs (e.g., fmdv ires) based on knowledge-based tertiary RNA motifs, and conventional molecular dynamics simulations (using NAMD + Amber force field). \\
+	- Worked on developing a coarse-grained Monte Carlo program coupled with statistical potentials to predict RNA 3D Structures	(programming language: \textbf{C++}):
+
+	\resitem{R\&D Intern, Schrodinger Inc, New York\cftdotfill{\cftsecdotsep} 2011}\\
+    - Worked on developing a new protocol for a ligand placement in PrimeX including an extended sampling and also improved the procedure of structure refinements (programming language: \textbf{python}).
+
+   	\resitem{Computational Scientist, Showe Lab, Systems Biology Devision, The Wistar Institute, PA\cftdotfill{\cftsecdotsep} 2006 -- 2007}\\
+    - Worked on several projects relate to microRNA gene and target prediction utilizing machine learning
+      techniques (programming languages: \textbf{shell scripting, perl, cgi, php, awk, matlab}).\\
+      The webserver I developed are as follows (Note that these web servers are no longer maintained):\\
+      - \href{http://wotan.wistar.upenn.edu/OneClassmiRNA/}{http://wotan.wistar.upenn.edu/OneClassmiRNA/}\\
+      - \href{http://wotan.wistar.upenn.edu/NBmiRTar/}{http://wotan.wistar.upenn.edu/NBmiRTar/}\\
+      - \href{http://wotan.wistar.upenn.edu/BayesSVMmiRNAfind/}{http://wotan.wistar.upenn.edu/BayesSVMmiRNAfind/}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Professional Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\resitem{Associate Director of R\&D and Clinical Bioinformatics at NeoGenomics Laboratories, CA \cftdotfill{\cftsecdotsep} 2018 -- present}\\
+	\resitem{Biomedical Informatics Consultant at the University of Chicago, IL \cftdotfill{\cftsecdotsep} 2016 -- 2018}\\
+	\resitem{Postdoctoral Fellow at Northwestern University, IL \cftdotfill{\cftsecdotsep} 2014 -- 2015}\\
+	\resitem{Postdoctoral Fellow at the Wistar Institute, PA\cftdotfill{\cftsecdotsep} 2013 -- 2014}\\
+	\resitem{R\&D Intern at Schrodinger Inc, NY\cftdotfill{\cftsecdotsep} 2011}\\
+	\resitem{Adjunct Instructor at NYU, NY\cftdotfill{\cftsecdotsep} 2010}\\
+   	\resitem{Computational Scientist at the Wistar Institute, PA\cftdotfill{\cftsecdotsep} 2006 -- 2007}\\
+   	\resitem{R\&D Intern at Coriell Institute for Medical Research, NJ\cftdotfill{\cftsecdotsep} 2005}\\
+	\resitem{System Engineer at Samsung Electronics Co., Ltd, South Korea\cftdotfill{\cftsecdotsep} 1994 -- 1998}\\
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Grant}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+NSF-STTR-IIP-1648937 (Co-PI: Segun Jung) - \href{https://www.sbir.gov/sbirsearch/detail/1216233} {www.sbir.gov/sbirsearch/detail/1216233}
+
+STTR Phase I: Development of a High-Performance Clinical Analysis Platform to Support Precision Medicine.
+
+\end{itemize}
+
+%\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Selected Publications: Full List in \href{https://scholar.google.com/citations?hl=en&user=hpEkR0IAAAAJ&view_op=list_works&sortby=pubdate} {Google Scholar}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[1)]
+
+\item
+  Skol AD, {\bf Jung S}, Sokovic AM, Chen S, Fazal S, Sosina O, Borkar PP, Lin A, Sverdlov M, Cao D, Swaroop A, Bebu I, DCCT/ EDIC Study group, Stranger BE, Grassi MA.
+  {\it Integration of genomics and transcriptomics predicts diabetic retinopathy susceptibility genes}.
+  \underline{\it \bf Elife.} { 9:e59980 (2020)}. \href{https://doi.org/10.7554/eLife.59980} {doi:10.7554/eLife.59980.}.
+
+\item
+  Funk CC, {\bf Jung S}, Richards MA, Rodriguez A, Shannon P, Donovan R, Heavner B, Chard K, Xiao Y, Glusman G,
+  Erteskin-Taner N, Golde T, Toga A, Hood L, Van Horn JD, Kesselman C, Foster I, Ament S, Madduri R, Price ND.
+  {\it Atlas of Transcription Factor Binding Sites from ENCODE DNase Hypersensitivity Data Across 27 Tissue Types}.
+  \underline{\it \bf Cell Reports.} {32(7):108029 (2020)}. \href{https://doi.org/10.1016/j.celrep.2020.108029} {doi:10.1016/j.celrep.2020.108029.}.
+
+\item
+	Jin H, {\bf Jung S}, DebRoy AR, and Davuluri RV., {\it Identification and validation of regulatory SNPs that modulate transcription factor
+  chromatin binding and gene expression in prostate cancer}. \underline{\it \bf Oncotarget.} {7(34): 54616–54626 (2016)}. \href{https://doi:10.18632/oncotarget.10520} {doi:10.18632/oncotarget.10520}.
+
+\item
+	Kim N, Laing C, Elmetwaly S, {\bf Jung S}, Curuksu J, and Schlick T, {\it Monte Carlo Sampling of 3D RNA Graph Topologies}.	\underline{\it \bf PNAS.} {111(11):4079-4084 (2014)}.\href{http://dx.doi.org/10.1073/pnas.1318893111} {doi:10.1073/pnas.1318893111}. \href{http://www.ncbi.nlm.nih.gov/pubmed/24591615}{PMID:24591615}.
+
+\item
+	{\bf Jung S} and Schlick T, {\it Interconversion between Parallel and Antiparallel Conformations of a 4H RNA junction in Domain 3 of Foot-and-Mouth-Disease Virus IRES Captured by Dynamics Simulations}. \underline{\it \bf Biophysical J.} {106(2): 447-458 (2014)}.\href{http://dx.doi.org/10.1016/j.bpj.2013.12.008}{doi:10.1016/j.bpj.2013.12.008}. \href{http://www.ncbi.nlm.nih.gov/pubmed/24461020}{PMID:24461020}.
+
+\item
+	Laing C*, {\bf Jung S*}, Kim N, Elmetwaly S, Zahran M, and Schlick T, {\it Predicting Helical Topologies in RNA Junctions as Tree Graphs}. (*equal contribution) \underline{\it \bf PLoS One.} {8(8):e71947 (2013)}.\href{http://dx.doi.org/10.1371/journal.pone.0071947}{doi:10.1371/journal.pone.0071947}. \href{http://www.ncbi.nlm.nih.gov/pubmed/23991010}{PMID:23991010}.
+
+\item
+	{\bf Jung S} and Schlick T, {\it Candidate RNA Structures for Domain 3 of the Foot-and-Mouth-Disease Virus Internal Ribosome Entry Site}. \underline{\it \bf Nucleic Acids Res.} {41(3):1483-95 (2012)}.\href{http://dx.doi.org/10.1093/nar/gks1302}{doi:10.1093/nar/gks1302}. \href{http://www.ncbi.nlm.nih.gov/pubmed/23275533}{PMID:23275533}.
+
+\item
+	Yousef M, {\bf Jung S}, Kossenkov AV, Showe LC and Showe MK, {\it Naive Bayes classifier for microRNA target gene identification}. \underline{\it \bf Bioinformatics.} {23(22):2987-92 (2007)}. \href{http://dx.doi.org/10.1093/bioinformatics/btm484}{doi:10.1093/bioinformatics/btm484}.  \href{http://www.ncbi.nlm.nih.gov/pubmed/17925304}{PMID:17925304}.
+
+\end{enumerate}
+
+
+%\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Awards, Grants \& Honours}
+\resheading{Honours}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\vspace{-2pt}
+	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+		\multicolumn{2}{c}{Postdoctoral Professional Development Travel Award\cftdotfill{\cftdotsep} 2015}\\
+		\multicolumn{2}{c}{Henry M. MacCracken Fellowship\cftdotfill{\cftdotsep} 2009 -- 2013}\\
+		\multicolumn{2}{c}{Sackler Institute Biomedical Sciences Training Fellowship\cftdotfill{\cftdotsep} 2007 -- 2008}\\
+		\multicolumn{2}{c}{Greater Philadelphia Bioinformatics Alliance (GPBA) Internship Award (\$12,000)\cftdotfill{\cftdotsep} 2005}\\
+		\multicolumn{2}{c}{Graduate Study Abroad Scholarship by the KOSEF (\$60,000)\cftdotfill{\cftdotsep} 2004 -- 2006}\\
+		\multicolumn{2}{c}{Dean's Fellowship\cftdotfill{\cftdotsep} 2004 -- 2006}\\
+		\multicolumn{2}{c}{President Award with Highest Honor\cftdotfill{\cftdotsep} 2003}\\
+		\multicolumn{2}{c}{Excellent Undergrad Research Award\cftdotfill{\cftdotsep} 2003}\\
+		\multicolumn{2}{c}{Merited-Based Full Scholarship\cftdotfill{\cftdotsep} 1999 -- 2002}\\
+		\vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-16pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Teaching Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\resitem{General Chemistry Laboratory I\cftdotfill{\cftsecdotsep} Fall, 2010}	\\
+	Responsible for teaching, demonstrating, and grading each lab experiment for 32 NYU Undergraduates
+	\resitem{General Chemistry Laboratory II\cftdotfill{\cftsecdotsep} Spring, 2009}\\
+	Responsible for grading, demonstrating, and guiding each lab experiment for 78 NYU Undergraduates
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\resitem{Dr. \textbf{Louise C. Showe}}\\
+%	 - Professor of Molecular and Cellular Pncogenesis Program\\
+%	 - Associate Director of Center for Systems and Computational Biology\\
+%	 - Scientific Director of Genomics and Bioinformatics Facility, The Wistar Institute, PA 19104 USA\\
+%	 - Master Thesis Advisor. Contact: (215)898-3791, lshowe@wistar.org
+%
+%	\resitem{Dr. \textbf{Tamar Schlick}}\\
+%	 - Professor of Chemistry, Computer Science, and Mathematics, New York University, NY 10003 USA\\
+%	 - PhD Thesis Advisor. Contact: (212)998-3596, schlick@nyu.edu
+%
+% 	\resitem{Dr. \textbf{Michael Shelley}}\\
+%	 - Lilian and George Lyttle Professor of Applied Mathematics\\
+%     - Professor of Mathematics and Neural Science\\
+%     - Co-Director, Applied Mathematics Laboratory, The Courant Institute, New York University, NY 10012 USA\\
+%	 - Computational Biology PhD Program Director and Academic Mentor. \\
+%  	   Contact: (212)998-3284, shelley@cims.nyu.edu
+%
+%  	 \resitem{Dr. \textbf{Ramana Davuluri}}\\
+%	 - Professor of Preventive Medicine and Neurological Surgery\\
+%     - Director of Cancer Informatics Core, Robert H Lurie Comprehensive Cancer Center\\
+%     - Division of Health and Biomedical Informatics, Department of Preventive Medicine, Northwestern University Feinberg School of Medicine, IL  60611 USA\\
+%	 - Postdoc Mentor. Contact: (312)503-2320, ramana.davuluri@northwestern.edu
+%
+%
+%
+%\end{itemize}
+
+\end{document}
